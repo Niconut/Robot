@@ -23,8 +23,6 @@ import org.firstinspires.ftc.teamcode.subsystems.scoring.Scoring_Arm.ScoringArmS
 import org.firstinspires.ftc.teamcode.subsystems.scoring.Scoring_Slide.ScoringSlideState;
 import org.firstinspires.ftc.teamcode.teamcode.MecanumDrive;
 
-import org.firstinspires.ftc.teamcode.subsystems.Constants;
-
 @TeleOp(name="Teleop", group="A_DriveCode")
 public class Teleop extends LinearOpMode {
 

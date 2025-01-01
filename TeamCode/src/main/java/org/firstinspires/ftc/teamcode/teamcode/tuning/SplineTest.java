@@ -7,11 +7,12 @@ import com.acmerobotics.roadrunner.SleepAction;
 import com.acmerobotics.roadrunner.TrajectoryActionBuilder;
 import com.acmerobotics.roadrunner.Vector2d;
 import com.acmerobotics.roadrunner.ftc.Actions;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.teamcode.MecanumDrive;
 import org.firstinspires.ftc.teamcode.teamcode.TankDrive;
-
+@Disabled
 public final class SplineTest extends LinearOpMode {
 
     Action TrajectoryHighSpecimenPrep, TrajectoryPickUpSamples1, TrajectoryPickUpSamples2;

@@ -1,11 +1,12 @@
 package org.firstinspires.ftc.teamcode.subsystems.scoring;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class Scoring_Slide {
+public class Scoring_Slide extends SubsystemBase {
     private DcMotorEx Viper_Slide1;
     private DcMotorEx Viper_Slide2;
 
@@ -99,6 +100,40 @@ public class Scoring_Slide {
         newpos = (newpos > SAFE_MAX)? SAFE_MAX:newpos;
         newpos = (newpos < SAFE_MIN)? SAFE_MIN:newpos;
         return newpos;
+    }
+
+    public void setStateCommand(ScoringSlideState  state){
+        int newpos = switch (state){
+            case INIT -> INIT;
+            case HOME -> HOME;
+            case STOW -> STOW;
+            case GROUND_PICKUP -> GROUND_PICKUP;
+            case WALL_PICKUP_PREP -> WALL_PICKUP_PREP;
+            case WALL_PICKUP_DONE -> WALL_PICKUP_DONE;
+            case WALL_PICKUP -> WALL_PICKUP;
+            case HIGH_CHAMBER_SCORE_PREP -> HIGH_CHAMBER_SCORE_PREP;
+            case HIGH_CHAMBER_SCORE -> HIGH_CHAMBER_SCORE;
+            case HIGH_BASKET_SCORE_PREP -> HIGH_BASKET_SCORE_PREP;
+            case HIGH_BASKET_SCORE -> HIGH_BASKET_SCORE;
+            case LOW_BASKET_SCORE_PREP -> LOW_BASKET_SCORE_PREP;
+            case LOW_BASKET_SCORE -> LOW_BASKET_SCORE;
+        };
+        newpos = (newpos > SAFE_MAX)? SAFE_MAX:newpos;
+        newpos = (newpos < SAFE_MIN)? SAFE_MIN:newpos;
+
+
+        Viper_Slide1.setTargetPosition(newpos);
+        Viper_Slide2.setTargetPosition(newpos);
+
+        Viper_Slide1.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+        Viper_Slide2.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+        Viper_Slide1.setPower(0.6);
+        Viper_Slide1.setPower(0.6);
+    }
+
+    public boolean isBusy(){
+        return (Viper_Slide1.isBusy() || Viper_Slide2.isBusy());
     }
 }
 

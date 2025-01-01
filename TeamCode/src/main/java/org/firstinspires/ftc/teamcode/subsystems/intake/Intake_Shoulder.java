@@ -1,15 +1,16 @@
 package org.firstinspires.ftc.teamcode.subsystems.intake;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class Intake_Shoulder {
+public class Intake_Shoulder extends SubsystemBase {
     private Servo Intake_Shoulder;
 
-    private static double INIT = 0.16;
-    private static double STOW = 0.16;
+    private static double INIT = 0.17;
+    private static double STOW = 0.18;
     private static double PICKUP_PREP = 0.69;
-    private static double DROP = 0.25;
+    private static double DROP = 0.23;
     private double SAFE_MIN = 0.15;
     private double SAFE_MAX = 0.8;
     private double MID = 0.5;

@@ -1,9 +1,10 @@
 package org.firstinspires.ftc.teamcode.subsystems.scoring;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class Scoring_Arm {
+public class Scoring_Arm extends SubsystemBase {
 
     public double INIT = 0.8;
     public double HOME = 0.8;

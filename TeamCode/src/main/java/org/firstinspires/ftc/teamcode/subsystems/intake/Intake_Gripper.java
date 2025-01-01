@@ -1,10 +1,11 @@
 package org.firstinspires.ftc.teamcode.subsystems.intake;
 
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class Intake_Gripper {
+public class Intake_Gripper extends SubsystemBase {
     private Servo IntakeGripper;
 
     private double INIT = 0.285;

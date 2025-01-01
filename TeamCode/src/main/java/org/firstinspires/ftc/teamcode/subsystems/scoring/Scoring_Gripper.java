@@ -1,9 +1,10 @@
 package org.firstinspires.ftc.teamcode.subsystems.scoring;
 
+import com.arcrobotics.ftclib.command.SubsystemBase;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 
-public class Scoring_Gripper {
+public class Scoring_Gripper extends SubsystemBase {
     private Servo Scoring_Gripper;
 
     public double CLOSED = 0.3;
