@@ -46,7 +46,7 @@ public class MeepMeepTesting {
                 .build();
 
         mySecondBot.runAction(myBot.getDrive().actionBuilder(new Pose2d(-10, 63.5, Math.toRadians(-90)))
-                .lineToY(35)
+               /* .lineToY(35)
                 .strafeToLinearHeading(new Vector2d(-50,50), Math.toRadians(-90))
                 .setReversed(true)
                 .lineToY(60)
@@ -62,7 +62,9 @@ public class MeepMeepTesting {
                 .strafeToLinearHeading(new Vector2d(-10,34), Math.toRadians(-90))
                 .strafeToLinearHeading(new Vector2d(-36, 60), Math.toRadians(-90))
                 .strafeToLinearHeading(new Vector2d(-10,34), Math.toRadians(-90))
-                .strafeToLinearHeading(new Vector2d(-36, 60), Math.toRadians(-90))
+                .strafeToLinearHeading(new Vector2d(-36, 60), Math.toRadians(-90))*/
+                .lineToY(35)
+                .splineToConstantHeading((new Vector2d(-48, 46)), Math.toRadians(-90))
                 .build());
 
         RoadRunnerBotEntity myThirdBot = new DefaultBotBuilder(meepMeep)
